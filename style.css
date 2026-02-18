@@ -84,7 +84,7 @@ nav ul li a:hover::after {
     color: #ff004f;
 }
 
-/* <!-- ...............................ABOUT --> */
+/* */
 #about {
     padding: 80px 0;
     color: #ababab;
@@ -153,7 +153,7 @@ nav ul li a:hover::after {
 
 .tab-contents ul li span {
     color: #b54769;
-    font-size: 16px;
+
 }
 
 .tab-contents {
@@ -166,9 +166,6 @@ nav ul li a:hover::after {
 
 /* .....................SERVICES................. */
 
-/* #services {
-    padding: 30px 0;
-} */
 
 .services-list {
     display: grid;
@@ -204,6 +201,12 @@ nav ul li a:hover::after {
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+    transition: transform 0.3s;
+}
+
+.services-list div a:hover {
+    color: #fff;
+    transform: translateY(-5px);
 }
 
 .services-list div:hover {
@@ -294,13 +297,16 @@ nav ul li a:hover::after {
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    transition: all 0.4s ease;
 
 }
 
 .btn:hover {
     background: #ff004f;
-
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 79, 0.5);
+    background: transparent;
+    color: #ff004f;
 }
 
 /* ................contact........................ */
@@ -333,20 +339,29 @@ nav ul li a:hover::after {
     margin-right: 15px;
     color: #ababab;
     display: inline-block;
-    transition: transform 0.5s;
+    transition: transform 0.5s, box-shadow 0.3s;
 
 }
 
 .social-icons a:hover {
     color: #ff004f;
     transform: translateY(-5px);
-
-
 }
 
 .btn.btn2 {
     display: inline-block;
     background: #ff004f;
+    color: #fff;
+    border: 2px solid #ff004f;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+}
+
+.btn.btn2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 79, 0.5);
+    background: transparent;
+    color: #ff004f;
 }
 
 .contact-right form {
@@ -384,15 +399,97 @@ form .btn2 {
     margin-top: 20px;
 }
 
-.copyright i {
+#msg {
+    color: #61b752;
+    /* Green color */
+    margin-top: 15px;
+    display: block;
+}
+
+nav .fa-solid {
+    display: none;
+}
+
+/* 1. Typing Text Color */
+.auto-type {
     color: #ff004f;
+    font-weight: bold;
+}
+
+/* 2. Certificate View Button (Next Line Style) */
+.view-cert-btn {
+    display: inline-block;
+    margin-top: 2px;
+    /* Gap from text */
+    background: transparent;
+    color: #ff004f;
+    border-radius: 5px;
+    font-size: 0.79rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.view-cert-btn:hover {
+    padding: 2px;
+    color: #ff004f;
+
+}
+
+/* 3. Certificate Modal (Popup) Style */
+#cert-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: 2% auto;
+    display: block;
+    width: 80%;
+    height: 90vh;
+    border: 2px solid #ff004f;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #ff004f;
+}
+
+/* 5. Unique Text Style */
+.code-style {
+    font-family: 'Courier New', Courier, monospace;
+    /* Coding font */
+    letter-spacing: 1px;
+    color: #fff !important;
+    /* Force White Color */
+    font-size: 0.6em;
+    /* Smaller size relative to H1 */
+    font-weight: normal;
+    /* Less bulky */
 }
 
 /* ................responsive................... */
 
-nav .fa-solid{
-    display: none;
-}
 @media only screen and (max-width:600px) {
 
     #header {
@@ -400,24 +497,26 @@ nav .fa-solid{
 
     }
 
+    /* Fixed: Container spacing for mobile */
+    .container {
+        padding: 10px 5%;
+    }
+
     .header-text {
         margin-top: 100%;
         font-size: 16px;
-
-
     }
 
     .header-text h1 {
         font-size: 30px;
-
     }
 
-    nav .fa-solid{
+    nav .fa-solid {
         display: block;
         font-size: 25px;
     }
 
-    nav ul{
+    nav ul {
         background: #ff004f;
         position: fixed;
         top: 0;
@@ -427,52 +526,75 @@ nav .fa-solid{
         padding-top: 50px;
         z-index: 2;
         transition: right 0.5s;
-
-
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin: 25px;
     }
 
-     nav ul .fa-solid{
+    nav ul .fa-solid {
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer;
-     }
+    }
 
-     .sub-title{
+    .sub-title {
         font-size: 40px;
-     }
-        .about-col-1, .about-col-2{
-            flex-basis: 100%;
-        }
-        .about-col-1{
-            margin-bottom: 30px;
-        }
-        .about-col-2{
-            font-size: 14px;
-        }
+    }
 
-        .tab-links{
-            margin-right: 20px;
-            font-size: 16px;
-        }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
 
-        .contact-left, .contact-right{
-            flex-basis: 100%;
-        }
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
 
-        .copyright{
-            font-size: 14px;
-        }
+    .about-col-2 {
+        font-size: 14px;
+    }
 
-        #msg{
-            color: #61b752;
-            margin-top: -40px;
-            display: block;
-        }
+    .tab-links {
+        margin-right: 20px;
+        font-size: 16px;
+    }
 
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+    }
 
+    .copyright {
+        font-size: 14px;
+    }
+
+    #msg {
+        color: #61b752;
+        margin-top: 20px; /* Fixed spacing */
+        display: block;
+    }
+
+    /* --- FIXED MODAL RESPONSIVENESS FOR MOBILE --- */
+    
+    /* Mobile View Fix for PDF */
+.modal-content {
+    width: 95%;        
+    height: auto;      /* Auto height */
+    aspect-ratio: 1/1; 
+    margin: 30% auto;  
+    border: none;      
+}
+
+    .close-modal {
+        top: 10px;       /* Closer to top */
+        right: 15px;     
+        font-size: 35px; /* Slightly smaller */
+        z-index: 10001;  /* Ensure it's on top */
+        background: rgba(0,0,0,0.5); /* Background to see button over content */
+        border-radius: 5px;
+        padding: 0 10px;
+    }
 }
