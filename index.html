@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>personal Portfolio</title>
+    <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6bf949bc70.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -27,13 +29,13 @@
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>Web Developer</p>
-                <h1>Hi, I'm <span>Bhuwan</span> <br>From Kashipur</h1>
+                <p>I am a <span class="auto-type"></span></p>
+                
+                <h1>Hi, I'm <span>Bhuwan</span><br><span class="code-style">&lt;CodingIsMyArt /&gt;</span></h1>
             </div>
         </div>
 
     </div>
-    <!-- ...............................ABOUT -->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -52,25 +54,63 @@
                         <p class="tab-links" onclick="opentab('experience')">Certifications</p>
                         <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
+                    
                     <div class="tab-contents active-tab" id="Skills">
                         <ul>
-                            <li><span>Programming Languages</span> <br> Python, C/C++, Java, JavaScript(ES6+), SQL </li>
-                            <li><span>Web Technologies</span> <br>HTML5 & CSS3, WordPress</li>
+                            <li><span>Programming Languages</span> <br> Python, C/C++, JavaScript(ES6+), SQL </li>
+                            <li><span>Technologies & Frameworks</span> <br>HTML5 & CSS3, React.js, Node.js, Express.js,<br> Strapi, Postman, WordPress, GitHub</li>
                             <li><span>Design Tools</span> <br>Canva, Figma</li>
-                            <li><span>Version Control</span> <br>Git & GitHub</li>
+                            <li><span>Databases</span> <br>MongoDB, MySQL</li>
                             <li><span>Core CS Concepts</span> <br>Data Structures & Algorithms (Arrays, Linked
-                                Lists,<br>Trees, Graphs, Sorting, Searching, Recursion, <br>(Dynamic Programming)</li>
+                                Lists,<br>Trees, Graphs, Sorting, Searching, Recursion)</li>
                         </ul>
                     </div>
+
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>Prompt Engineering with GitHub Copilot</span> <br>- Simplilearn / Microsoft</li>
-                            <li><span>Databricks for Generative AI</span> <br>- Simplilearn / Databricks</li>
-                            <li><span>Introduction to Generative AI </span> <br>- Simplilearn / Google Cloud</li>
-                            <li><span>AWS Inferentia and Amazon EC2</span> <br>- Simplilearn / AWS </li>
-                            <li><span>Machine Learning using Python</span> <br>- Simplilearn / SkillUp </li>
+                            <li>
+                                <span>Prompt Engineering with GitHub Copilot</span>
+                                <br>
+                                <div style="margin-top: 2px; font-size: 14px; color: #ababab;">- Simplilearn / Microsoft</div>
+                                <span class="view-cert-btn" onclick="openCertModal('images/cert1.pdf')">
+                                    <i class="fa-regular fa-eye"></i> View Certificate
+                                </span>
+                            </li>
+                            <li>
+                                <span>Databricks for Generative AI</span>
+                                <br>
+                                <div style="margin-top: 2px; font-size: 14px; color: #ababab;">- Simplilearn / Databricks</div>
+                                 <span class="view-cert-btn" onclick="openCertModal('images/cert2.pdf')">
+                                    <i class="fa-regular fa-eye"></i> View Certificate
+                                </span>
+                            </li>
+                            <li>
+                                <span>Introduction to Generative AI </span>
+                                <br>
+                                <div style="margin-top: 2px; font-size: 14px; color: #ababab;">- Simplilearn / Google Cloud</div>
+                                <span class="view-cert-btn" onclick="openCertModal('images/cert3.pdf')">
+                                    <i class="fa-regular fa-eye"></i> View Certificate
+                                </span>
+                            </li>
+                            <li>
+                                <span>AWS Inferentia and Amazon EC2</span>
+                                <br>
+                                <div style="margin-top: 2px; font-size: 14px; color: #ababab;">- Simplilearn / AWS</div>
+                                <span class="view-cert-btn" onclick="openCertModal('images/cert4.pdf')">
+                                    <i class="fa-regular fa-eye"></i> View Certificate
+                                </span>
+                            </li>
+                            <li>
+                                <span>Full Stack Project Completion</span>
+                                <br>
+                                <div style="margin-top: 2px; font-size: 14px; color: #ababab;">- GreatStack</div>
+                                 <span class="view-cert-btn" onclick="openCertModal('images/cert5.pdf')">
+                                    <i class="fa-regular fa-eye"></i> View Certificate
+                                </span>
+                            </li>
                         </ul>
                     </div>
+
                     <div class="tab-contents" id="education">
                         <ul>
                             <li><span>Master of Computer Applications (MCA)</span> <br> Amrapali
@@ -92,7 +132,6 @@
         </div>
     </div>
 
-    <!-- .........................SERVICES...............  -->
     <div id="services">
         <div class="container">
             <h1 class="sub-title">My Services</h1>
@@ -102,27 +141,25 @@
                     <h2> Web Design </h2>
                     <p>I design modern, responsive websites that combine creativity, usability, and performance. Each project focuses on clean UI, smooth UX, and SEO-optimized layouts that work beautifully across all devices.
                     </p>
-                    <a href="#">Learn more</a>
+                    <a href="#portfolio">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-crop-simple"></i>
                     <h2> UI/UX Design</h2>
                     <p>I create intuitive and visually engaging user experiences that align design with purpose. My focus is on usability, accessibility, and user satisfaction, ensuring every interface is both beautiful and easy to navigate.
                     </p>
-                    <a href="#">Learn more</a>
+                    <a href="#portfolio">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-brands fa-app-store"></i>
                     <h2> App Design</h2>
-                    <p>I design engaging, user-friendly mobile apps with seamless interfaces and smooth interactions. My goal is to create intuitive designs that enhance usability, strengthen brand identity, and deliver a delightful user experience across Android platforms.
+                    <p>I design engaging, user-friendly mobile apps with seamless interfaces. My goal is to create intuitive designs that enhance usability, strengthen brand identity, and deliver a delightful user experience across iOS and Android devices.
                     </p>
-                    <a href="#">Learn more</a>
+                    <a href="#portfolio">Learn more</a>
                 </div>
             </div>
         </div>
 
-        <!-- ........................portfolio........... 
-          -->
         <div id="portfolio">
             <div class="container">
                 <h1 class="sub-title">My Work</h1>
@@ -130,32 +167,33 @@
                     <div class="work">
                         <img src="images/work-1.png" alt="">
                         <div class="layer">
-                            <h3>Auto-reply Chatbot</h3>
-                            <p>Developed a Python-based AI chatbot that tracks chat coordinates, analyzes conversations in real-time, and generates context-aware automated replies.</p>
-                            <a href="https://github.com/Bhuwan143/Auto-Reply-Chatbot.git" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <h3>FitTrack - Fitness Tracker</h3>
+                            <p>Developed a React and Strapi-based health system that captures food images, analyzes nutritional content via Google Gemini AI, and generates real-time health insights.</p>
+                            <a href="https://fitness-tracker-eta-kohl.vercel.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
+                    
                     <div class="work">
                         <img src="images/work-2.png" alt="">
+                        <div class="layer">
+                            <h3>Food Delivery Website</h3>
+                            <p>Built a MERN stack based Food Delivery Web App with user authentication, explore food items, add products to cart, place online orders seamlessly and admin dashboard supporting full CRUD operations.</p>
+                            <a href="https://food-del-frontend-pi05.onrender.com/" target="_blank" ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="images/work-3.png" alt="">
                         <div class="layer">
                             <h3>Musify Web-App</h3>
                             <p>Musify is a web-based music player like Spotify, built with HTML, CSS, and JavaScript, supporting multi-language songs and features like play/pause, track navigation, and volume control.</p>
                             <a href="https://github.com/Bhuwan143/Musify-Music-Player.git" target="_blank" ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
-                    <div class="work">
-                        <img src="images/work-3.jpg" alt="">
-                        <div class="layer">
-                            <h3>JARVIS</h3>
-                            <p>Jarvis is a Python-based AI personal assistant that responds to voice commands to open websites, play music, deliver news, and automate tasks.</p>
-                            <a href="https://github.com/Bhuwan143/JARVIS-Personal-Assistant.git" target="_blank" ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
                 </div>
                 <a href="https://github.com/Bhuwan143" class="btn" target="_blank"> See more</a>
             </div>
         </div>
-        <!--...................contact.....................-->
         <div id="contact">
             <div class="container">
                 <div class="row">
@@ -169,7 +207,7 @@
                             <a href="https://www.instagram.com/its.bhuwan_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                             <a href="https://www.linkedin.com/in/1bhuwan" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
-                        <a href="images/Bhuwan_CV.pdf" download class="btn btn2">Download CV</a>
+                        <a href="images/Bhuwan_cv.pdf" download class="btn btn2">Download CV</a>
                     </div>
                     <div class="contact-right">
                         <form name="submit-to-google-sheet">
@@ -183,14 +221,17 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>Copyright &copy; Bhuwan <i class="fa-solid fa-heart"></i>. All rights reserved.</p>
+                <p>Copyright &copy; Bhuwan, All rights reserved</p>
             </div>
+        </div>
+
+        <div id="cert-modal">
+            <span class="close-modal" onclick="closeCertModal()">&times;</span>
+            <iframe id="cert-frame" class="modal-content" src=""></iframe>
         </div>
 
 
         <script>
-
-
             var tablinks = document.getElementsByClassName("tab-links");
             var tabcontents = document.getElementsByClassName("tab-contents");
             function opentab(tabname) {
@@ -213,9 +254,41 @@
             function closemenu() {
                 sidemenu.style.right = "-200px";
             }
-
-
         </script>
+
+        <script>
+            // 1. Typing Effect Logic
+            var typed = new Typed(".auto-type", {
+                strings: ["Web Developer", "MCA Student", "UI/UX Designer", "Full Stack Developer"],
+                typeSpeed: 100,
+                backSpeed: 50,
+                loop: true
+            });
+
+            // 2. Certificate Modal Logic
+            function openCertModal(pdfUrl) {
+                var modal = document.getElementById("cert-modal");
+                var frame = document.getElementById("cert-frame");
+                frame.src = pdfUrl;
+                modal.style.display = "block";
+            }
+
+            function closeCertModal() {
+                var modal = document.getElementById("cert-modal");
+                var frame = document.getElementById("cert-frame");
+                modal.style.display = "none";
+                frame.src = ""; 
+            }
+
+            // Close modal on outside click
+            window.onclick = function(event) {
+                var modal = document.getElementById("cert-modal");
+                if (event.target == modal) {
+                    closeCertModal();
+                }
+            }
+        </script>
+
         <script>
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxG_Nlh9P2nxK6uovPcSywAj_9LlHFk3-yplp3JfxgtYYPEKRvs3fHWWBVbfaiH_TGceA/exec'
             const form = document.forms['submit-to-google-sheet']
@@ -225,7 +298,7 @@
                 e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                     .then(response => {
-                        msg.innerHTML = "Message sent successfully"
+                        msg.innerHTML = "Message sent successfully <i class='fa-solid fa-circle-check'></i>"
                         setTimeout(function () {
                             msg.innerHTML = ""
                         }, 5000)
@@ -236,6 +309,4 @@
         </script>
 </body>
 
-
 </html>
-
